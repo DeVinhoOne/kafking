@@ -12,13 +12,13 @@ import java.time.LocalDateTime;
 @RequiredArgsConstructor
 public class SenderService {
 
-//    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Value("${custom.kafka.topic.main}")
     private String mainTopicName;
 
     @PostConstruct
     public void sendTestMessageToKafkaTopic() {
-//        kafkaTemplate.send(mainTopicName, "Hello, it's test message from sender-service. Time: " + LocalDateTime.now());
+        kafkaTemplate.send(mainTopicName, "Hello, it's test message from sender-service. Time: " + LocalDateTime.now());
     }
 }
