@@ -1,6 +1,13 @@
 spring:
+  kafka:
+    bootstrap-servers: http://localhost:9092
   application:
     name: sender-service
 
 server:
   port: 8001
+
+custom:
+  kafka:
+    topic:
+      main: kafking
